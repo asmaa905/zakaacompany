@@ -5,17 +5,18 @@
       "contactUs": "Contact Us",
       "AboutUs": "About Us",
       "Home": "Home",
-      "services":"Servies",
-      "ourServies":"Our Servies",
-
+      "services":"services",
+      "ourServies":"Our services",
+      "blog":"Blog",
+      "OurWorks":"Our Works",
       "menu":"Menu",
       "HowToWork":"?How to work",
-
       "JoinUs":"Join us",
+
       "letsBulidGreatThingsTogether":"Lets bulid great things together!",
       "SHowAvalableJobs":"Show available jobs",
-      "subscribeToGetNotations ":"subscribe to get notations!",
-      "subscribe ":"subscribe",
+      "SubscribeToGetNotations ":"subscribe to get notations!",
+      "Subscribe ":"subscribe",
       "subscribeInEmailToGetUpdatesAndNewNews":"subscribe in E-mail to get updates and new news",
       "EnterYourEmail":"Enter your email",
       "ShowMore":"Show more",
@@ -27,11 +28,27 @@
       "Cairo":"Cairo",
       "BadrCity":"Badr City",
       "companyAddress":"Cairo - Badr City  - Second Discrit ",
+      "friendCompanies":"Friend Companies",
+
+      "thakaaQabadh":"Thaka Holding",
+      "altamiz":"Altamiz",
+      "quduratech":"Thaka Holding",
+      "robotera":"Robotera",
+      "tatheerplus":"Tatheer Plus",
+      "zakaa-company":"Thaka",
 
       "writeYourEmailToGetNews":"write your E-mail to get news",
       "copyRights":"All copy right saved for thakaa internationsl 2023",
       "integratedTechnicalSolutions":"integrated Technical Solutions",
       "TrainingAndRehabilitation":"Training And Rehabilitation",
       "StudieAndConsultations":"Studie And Consultations",
-      "getInformation":"Get Information"
+      "getInformation":"Get Information",
+      "routes.home":"Home",
+      "routes.about":"About",
+      "routes.ourServies":"Our servies",
+      "routes.OurWorks":"Our Works",
+      "routes.contactUs":"Contact Us",
+      "routes.jobs":"Jobs",
+      "routes.blog":"Blog"
+
   }

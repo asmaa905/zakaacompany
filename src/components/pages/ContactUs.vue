@@ -3,7 +3,7 @@
 <h2
 :style="`${lang=='en'?'text-align: left;':' text-align: right;'}`"
 
->{{ $t('subscribeToGetNotations') }}</h2>
+>{{ $t('SubscribeToGetNotations') }}</h2>
 <p
 :style="`${lang=='en'?'text-align: left;':' text-align: right;'}`"
 
@@ -14,7 +14,7 @@
   type="email"
 
   :placeholder="$t('EnterYourEmail')"
-  :style="`${lang=='en'?' justify-content: flex-start;':' justify-content: flex-end;'}`"
+  :style="`${lang=='en'?'text-align: left;margin-right: 16px; ':'text-align: right; margin-left: 16px;'}`"
   />
 </form>
   </div>
@@ -31,12 +31,14 @@ export default {
 };
 </script>
 <style scoped>
+
 .content{
   padding: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 .img{
   background-image: url('@/assets//BackgroundBlue.jpg');
@@ -89,12 +91,12 @@ box-shadow: 0px 4px 4px 0px rgba(144, 144, 144, 0.25);
 input{
   border-radius: 4px;
 background: var(--White, #FFF);
-
+width:280px;
 display: flex;
-padding: 9px 16px 9px 168px;
+padding: 9px 16px 9px 16px;
 align-items: center;
 box-shadow: 0px 4px 4px 0px rgba(144, 144, 144, 0.25);
-margin-left: 16px;
+height: 42px;
 border:none
 }
 form{

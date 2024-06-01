@@ -1,34 +1,29 @@
 <template>
     <footer 
-    class="text-center  text-xs-center"  
     style="background-color: #12151C;color:white"
     :style="`direction:${ lang=='en'?'ltr'  : 'rtl'};`"
     >      
       <section 
       :class="`text-align-${ lang=='en'?'left'  : 'right'};`"
       >
-        <div class="container text-center text-md-end  text-xs-center p-4 ">
+        <div class="container p-4 ">
           <div class="row mt-3 ">
             <!-- company info -->
-            <div class="col-md-3 col-lg-4 col-xl-3  mb-4 d-flex flex-column align-items-start">
+            <div class="col-md-3 col-lg-4 col-xl-3  mb-4 d-flex flex-column align-items-start h-100">
               <!-- logo -->
               <img 
               src="@/assets/logo.png" 
               style="width:133px;height: 72px;"
               />
               <!-- company name -->
-              <h6 class="text-uppercase fw-bold mb-4"
+              <!-- <h6 class="text-uppercase fw-bold mb-4"
                >
                <span >{{ $t('thakaaInternational') }} - {{  $t('Egypt') }}  </span>
-              </h6>
+              </h6> -->
+              <div style="height:3rem"></div>
               <div class="mx-0">
                <!--phone number-->
-              <p 
-                class="phone d-flex flex-row " 
-              >
-                <i class="fas fa-phone flex-1"></i>
-                <span class="flex-2 mx-2">01558075795</span>
-              </p>
+
               <!-- address -->
               <p 
                 class="address d-flex flex-row flex-gap-1" 
@@ -36,33 +31,51 @@
               <i class="fa-solid fa-location-dot"></i>
               <span class="flex-2 mx-2">{{ $t('companyAddress') }}</span>
               </p>
+              <p 
+              class="phone d-flex flex-row " 
+            >
+              <i class="fas fa-phone flex-1"></i>
+              <span class="flex-2 mx-2">01558075795</span>
+            </p>
               <!-- E-mail -->
               <p 
                 class="email d-flex flex-row flex-gap-1" 
               >
               <i class="fas fa-envelope "></i>
-              <span class="flex-2 mx-2">hr@thaka.saaa</span>
+              <span class="flex-2 mx-2">info@thaka.net</span>
             </p>
               </div>
             </div>
             <!-- menu-->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 d-flex flex-column align-items-start">
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4 d-flex flex-column align-items-start">
               <h6 class="text-uppercase fw-bold mb-4 section-title">{{ $t('menu')  }}</h6>
               
               <p v-text=" $t('Home')"></p>
               <p  v-text=" $t('AboutUs') "></p>
               <p v-text=" $t('services') "></p>
               <p v-text=" $t('jobs')"></p>
+              <p v-text=" $t('OurWorks')"></p>
+  
+            </div>
+          <!-- friend Companies-->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4 d-flex flex-column align-items-start">
+            <h6 class="text-uppercase  mb-4 section-title">{{ $t('friendCompanies')  }}</h6>
+            
+            <a v-text=" $t('thakaaQabadh')" href="https://thakaholding.com/#/"/>
+            <a  v-text=" $t('altamiz') "  href="https://thakaholding.com/#/"/>
+            <a v-text=" $t('quduratech') "  href="https://quduratech.com/#/"/>
+            <a v-text=" $t('robotera') " href="https://robotera.com.sa/dev/#/"/>
+              <a v-text=" $t('tatheerplus')" href="http://tatheerplus.com/"/>
             </div>
             <!-- services-->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 d-flex flex-column"
-            :class="` align-items-${lang == 'en'?'end':'start'}`">
+            :class="` text-align-${lang == 'en'?'left':'right'}`">
               <h6 class="text-uppercase fw-bold mb-4 section-title">
                 {{ $t('services') }}
               </h6>
               <div class="d-flex flex-row gap-8" style="gap:8px">
                 <img src="@/assets/solar_code-square-bold.svg"  alt="code" />
-                <p class="flex-2" v-text="$t('integratedTechnicalSolutions')"></p>
+                <p   :class="` text-align-${lang == 'en'?'left':'right'}`" class="flex-2" v-text="$t('integratedTechnicalSolutions')"></p>
               </div>
               
               <div class="d-flex flex-row flex-gap-1" style="gap:8px">
@@ -80,7 +93,7 @@
 
             </div>
             <!-- last news -->
-            <div class=" col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 d-flex flex-column align-items-start " style="width:fit-content !important">
+            <div class=" col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 d-flex flex-column align-items-start " style="width:fit-content !important">
               <h6 class="text-uppercase fw-bold mb-4 section-title">
              {{ $t('lastNews') }}
               </h6>
@@ -135,7 +148,7 @@ export default {
 
 <style scoped>
 footer{
- 
+
   font-size:16px; 
   
   font-family:cairo;
@@ -190,5 +203,13 @@ footer{
 }
 .email-from {
   border-radius: 4px !important;
+}
+a {
+  text-decoration: none;
+  font-size:16px; 
+
+  font-family:cairo;
+  color:white;
+  margin-bottom: 1rem;
 }
 </style>

@@ -23,12 +23,14 @@
             >{{ $t('SHowAvalableJobs') }}</b-button>
 
         </div>
-      <video  controls autoplay>
+      <video  autoplay  loop="" loading="lazy" width="100%" height="100%">
         <!--poster-->
   <source src="@/assets/video.mp4" type="video/mp4">
   <source src="@/assets/video.mp4" type="video/ogg">
 
     </video>
+
+    <!-- <video data-v-43e97428="" autoplay="" loop="" loading="lazy" width="100%" height="100%"><source data-v-43e97428="" src="media/join-us-section-2.c209a89f.mp4"></video> -->
 </div>
 </template>
 <script>

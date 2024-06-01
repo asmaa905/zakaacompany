@@ -8,6 +8,8 @@
     "ContactUs":"تواصل معنا",
     "services":"الخدمات",
     "ourServies":"خدماتنا",
+    "blog":"مدونة",
+    "OurWorks":"اعمالنا",
     "menu":"القائمة",
     "ShowMore":"عرض المزيد",
     "HowToWork":"؟كيف نعمل",
@@ -16,8 +18,8 @@
     "JoinUs":"انضم الينا",
     "letsBulidGreatThingsTogether":"دعونا نبني أشياء عظيمة معًا!",
     "SHowAvalableJobs":"تعرف على الوظائف المتاحة",
-    "subscribeToGetNotations ":"اشترك ليصلك إشعار!",
-    "subscribe ":"اشتراك",
+    "SubscribeToGetNotations":"اشترك ليصلك إشعار!",
+    "subscribe":"اشتراك",
     "subscribeInEmailToGetUpdatesAndNewNews":"قم بالتسجيل بالنشرة البريدية لتلقي التحديثات والأخبار الجديدة.",
     "EnterYourEmail":"ادخل بريدك الالكترونى",
     "lastNews":"اخر الاخبار",
@@ -26,13 +28,24 @@
     "Cairo":"القاهرة",
     "BadrCity":"مدينة بدر",
     "companyAddress":"القاهرة-مدينة بدر - الحى الثانى",
+    "friendCompanies":"الشركات الصديقة",
+    "thakaaQabadh":"ذكاء القابضة",
+    "altamiz":"التميز",
+    "quduratech":"قدراتك",
+    "robotera":"روبوتيرا",
+    "tatheerplus":"تأثير",
+    "zakaa-company":"ذكاء",
     "writeYourEmailToGetNews":"ادخل بريدك الالكترونى ليصلك كل جديد",
     "copyRights":"2023جميع الحقوق محفوظة لشركة ذكاء الدولية ",
     "integratedTechnicalSolutions":"حلول تقنية متكاملة",
     "TrainingAndRehabilitation":"تدريب وتأهيل",
     "StudieAndConsultations":"الدراسات والاستشارات",
-    "getInformation":"الحصول على المعلومات"
-
-
-
+    "getInformation":"الحصول على المعلومات",
+    "routes.home":"الرئيسية",
+    "routes.about":"من نحن",
+    "routes.ourServies":"خدماتنا",
+    "routes.OurWorks":"اعمالنا",
+    "routes.contactUs":"تواصل معنا",
+    "routes.jobs":"الوظائف",
+    "routes.blog":"المدونة"
 }

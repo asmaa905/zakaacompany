@@ -5,14 +5,14 @@
         <h2 v-if="currentServieee.id == service.id"
         :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
 
-        >{{ currentServieee.title }}</h2>
-        <h3 v-else @click="showServies(service.id)">{{ service.title }}</h3>
+        >{{ parseName(currentServieee.title) }}</h2>
+        <h3 v-else @click="showServies(service.id)">{{ parseName(service.title) }}</h3>
         <p  
           v-if="currentServieee.id == service.id" 
           class="current-service" 
           style="text-wrap: wrap;"
           :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
-        > {{ currentServieee.details }}
+        > {{ parseName(currentServieee.details) }}
       </p>
       </div>
     </div>
@@ -43,15 +43,9 @@
           >{{ $t('ourServies') }}</h2>
           <p
           :style="`${lang=='en'?'text-align: left;':'text-align: right; '}`"
-          >نساعد عملائنا على تبسيط أعمالهم من خلال مجموعة
-            الحلول والخدمات والتطبيقات التي تساعد على تسهيل سير وتكامل الأعمال بالإضافة
-              إلى الدعم التقني والمتابعة المستمرة.
-          </p>
+          >{{ parseName(OurServicesParagraph) }}</p>
           <button @click="showMore()">{{ $t('ShowMore') }}</button>
-          <p v-show="show" class="mt-3">نساعد عملائنا على تبسيط أعمالهم من خلال مجموعة
-            الحلول والخدمات والتطبيقات التي تساعد على تسهيل سير وتكامل الأعمال بالإضافة
-              إلى الدعم التقني والمتابعة المستمرة.
-          </p>
+          <p v-show="show" class="mt-3">{{ parseName(OurServicesParagraph) }}</p>
       </div>
     </div>
   </div>
@@ -64,36 +58,63 @@ export default{
       show:false,
       Servicetimer:null,
       ServiceCurrent:0,
+      OurServicesParagraph: {
+        "ar":"نساعد عملائنا على تبسيط أعمالهم من خلال مجموعة الحلول والخدمات والتطبيقات التي تساعد على تسهيل سير وتكامل الأعمال بالإضافة إلى الدعم التقني والمتابعة المستمرة.",
+        "en":"We help our customers simplify their business through a set of solutions, services and applications that help facilitate the flow and integration of business, in addition to technical support and continuous follow-up."
+      },
       currentServie:{
           id:0,
           title:'حلول تقنية متكاملة',
-          details:"ننشئ ونطور الحلول التقنية للشركات والمؤسسات في المراحل المختلفة بداية من الإنشاء حتى الانطلاق بالإضافة للدعم التقني والمتابعة المستمرة",
+          details:{
+        "ar":"نساعد عملائنا على تبسيط أعمالهم من خلال مجموعة الحلول والخدمات والتطبيقات التي تساعد على تسهيل سير وتكامل الأعمال بالإضافة إلى الدعم التقني والمتابعة المستمرة.",
+        "en":"We help our customers simplify their business through a set of solutions, services and applications that help facilitate the flow and integration of business, in addition to technical support and continuous follow-up."
+      },
            icon:'fa_solid_laptop_code.svg'
         },
       services:[
       {
           id:0,
-          title:'حلول تقنية متكاملة',
-          details:"ننشئ ونطور الحلول التقنية للشركات والمؤسسات في المراحل المختلفة بداية من الإنشاء حتى الانطلاق بالإضافة للدعم التقني والمتابعة المستمرة"
-          ,
+          title:{
+            "ar":'حلول تقنية متكاملة',
+            "en":'Integrated technical solutions',
+          },
+          details:{
+            "ar":"نساعد عملائنا على تبسيط أعمالهم من خلال مجموعة الحلول والخدمات والتطبيقات التي تساعد على تسهيل سير وتكامل الأعمال بالإضافة إلى الدعم التقني والمتابعة المستمرة.",
+            "en":"We help our customers simplify their business through a set of solutions, services and applications that help facilitate the flow and integration of business, in addition to technical support and continuous follow-up."
+          },
            icon:'fa_solid_laptop_code.svg'},
         {
           id:1,
-          title:'تسويق وتطوير الاعمال',
-          details:"نوفر لك كافة وسائل التسويق الالكتروني ونعملُ لك عليها، لتسويق أعمالك مُنتجاتك ونشر هويتك لأكبر قدر ممكن من العملاء المحتملين."
-          ,
+          title:{
+            "en":'Marketing and business development',
+            "ar":'تسويق وتطوير الاعمال',
+          },
+          details:{
+          "ar":"نوفر لك كافة وسائل التسويق الالكتروني ونعملُ لك عليها، لتسويق أعمالك مُنتجاتك ونشر هويتك لأكبر قدر ممكن من العملاء المحتملين.",
+          "en":"We provide you with all electronic marketing methods and work on them, to market your business and products and spread your identity to the largest possible number of potential customers."
+        },
            icon:'uil_chart_line.svg'},        
          {
           id:2,
-          title:"الدراسات والاستشارات",
-          details:"تواصل مع طاقمنا الاستشاري للحصول على خدمات استشارية في المجالات التقنية والإدارية تدعم نمو أعمالك."
-          ,
+          title:{
+            "ar":"الدراسات والاستشارات",
+            "en":"Studies and consultations",
+          },
+          details:{
+            "ar":"تواصل مع طاقمنا الاستشاري للحصول على خدمات استشارية في المجالات التقنية والإدارية تدعم نمو أعمالك.",
+            "en":"Contact our consulting team to obtain consulting services in the technical and administrative fields that support the growth of your business."
+          },
            icon:'ph_users_three_fill.svg'},
         {
           id:3,
-          title:"التدريب والتأهيل",
-          details:"نهدف في ذكاء الدولية إلى تطوير أداء المؤسسات ورفع مهارة الأفراد من خلال إعداد البرامج التدريبية التي توفر الأدوات اللازمة لزيادة الخبرات والمهارات ."
-          ,
+          title:{
+            "ar":"التدريب والتأهيل",
+            "en":"Training and qualification"
+          },
+          details:{
+            "ar":"نهدف في ذكاء الدولية إلى تطوير أداء المؤسسات ورفع مهارة الأفراد من خلال إعداد البرامج التدريبية التي توفر الأدوات اللازمة لزيادة الخبرات والمهارات .",
+            "en":"At Zakaa International, we aim to develop the performance of institutions and raise the skills of individuals by preparing training programs that provide the necessary tools to increase experience and skills."
+          },
            icon:'icon_park_solid_every_user.svg' }
       ]
     }
@@ -145,13 +166,14 @@ export default{
       resetServiesAnimate() {
         clearInterval(this.Servicetimer);
         this.ourServicesAnimate();
-      }
+      },
   },
 }
 </script>
 <style scoped>
 .content{
-  padding:40px 120px
+  padding:40px 120px;
+  
 }
 .leftSide{
   width:50%

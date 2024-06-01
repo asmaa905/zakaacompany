@@ -12,7 +12,6 @@
         <content-us />
       </template>
     </main-layout>
-    <router-view/>
   </div>
 </template>
 

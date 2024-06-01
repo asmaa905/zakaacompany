@@ -1,55 +1,61 @@
 <template>
     <div id="carouselExampleIndicators" class="carousel slide rounded-lg"
-    style="  padding-top: 60px;">
-      <div class="carousel-inner position-relative" style="position: relative;">
+    style=" height: 90vh !important;padding-top:60px">
+      <div class="carousel-inner" style="position: relative;">
         <div
-          class="carousel-item"
+          class="carousel-item "
+          style="height:100%        
+          "
           v-for="(item, i) in slides"
           :key="i"
           ref="carouselItem"
           :class="current == i ? 'active' : ''"
         >
+
         <div 
           id="overlay"
-          style="max-height: 100%; width:100%; background-color: rgba(0,0,0,54%); "
+          style="max-height: 100%; max-width:100%; background-color: rgba(0,0,0,54%);"
           :style="`${lang=='en'?' direction: ltr;justify-content: left; text-align: left;':  ' direction: rtl;justify-content: right; text-align: right;'}`"
 
           >
-          <div style="max-height: 100%; width:100%; padding-top:30px"
+          <div style="max-height: 100%; width:44%; padding-top:30px"
           :style="`${lang == 'en'?'padding-left: 30px; ':'padding-right: 30px;'}`"
           >
-          <h6
-          :style="`${lang=='en'?' text-align: left;' : 'text-align: right;'}`"
-          >ذكاء الدولية توفر لك.....</h6>
-            <div class="input-wrapper">
-            <br/>
-                <button  
-                    class="btn2 button"
-                    style="font-size:40px;font-weight:bold; "
-                    v-for="(itemm, i) in animatedWords"
-                    :key="i"
-                    :style="`display: ${currentWord == i ? 'block' : 'none'}`"                >
-                <div>
-                    <span>{{ itemm.text }}</span>
-                </div>
-            </button>
+            <h2
+            :style="`${lang=='en'?' text-align: left;' : 'text-align: right;'}`"
+            v-text="parseName(Sliderheader)+ '.....'"
+            />
+              <div v-if="lang == 'ar'" class="input-wrapper">
               <br/>
+                  <h1  
+                      class="btn2 button"
+                      style="font-size:40px;font-weight:bold; "
+                      v-for="(itemm, i) in animatedWords"
+                      :key="i"
+                      :style="`display: ${currentWord == i ? 'block' : 'none'}`"                >
+                  <div>
+                      <span>{{ parseName(itemm.text) }}</span>
+                  </div>
+                </h1>
+                <br/>
 
-            </div>
-            <p>نقدم لك جميع خدمات المواقع الإلكترونية وتطبيقات الموبايل وبرامج إدارة المؤسسات وكل <br/>,الحلول التقنية الذكية التي تحتاجها في إنشاء وتطوير أعمالك لتنقل أعمالك للمستقبل<br/> وتواكب تقنيات الذكاء الاصطناعي.</p>
-            <b-button class="cc">{{ $t('contactUs') }}</b-button>
+              </div>
+              <div v-else style="height: 80px;"></div>
+              <h4 v-text="parseName(paragragh)" />
+              <b-button class="cc">{{ $t('contactUs') }}</b-button>
           </div>
-          </div>
+        </div>
         <img 
         :src="item.src"
-        style="width:100%; height:100%"
-        alt="slider"/>
-
+        style="max-width:100%; max-height:100%;       
+        "
+        alt="slider"
+        
+        />
         </div>
       </div>
     </div>
   </template>
-  
   <script>
   export default {
     name: "header-slider",
@@ -62,15 +68,25 @@
         animatedWords:[
         {
             id: 1,
-            text: "البرمجة",
+            text: {
+              "ar":"البرمجة",
+              "en":"Programming"
+            },
           },
           {
             id: 2,
-            text: "التطبيق",
+            
+            text: {
+              "ar":"تطبيقات",
+              "en":"Applications"
+            },
           },
           {
             id: 3,
-            text: "التقدم",
+            text: {
+              "ar":"مواقع",
+              "en":"Websites"
+            }, 
           },
         ],
         slides: [
@@ -93,8 +109,12 @@
         ],
         paragragh:{
           "en":"We provide you with all website services, mobile applications, enterprise management programs, and all The smart technical solutions you need to create and develop your business to move your business to the futureKeeping pace with artificial intelligence technologies.",
-          "ar":">نقدم لك جميع خدمات المواقع الإلكترونية وتطبيقات الموبايل وبرامج إدارة المؤسسات وكل <br/>,الحلول التقنية الذكية التي تحتاجها في إنشاء وتطوير أعمالك لتنقل أعمالك للمستقبل<br/> وتواكب تقنيات الذكاء الاصطناعي."
-        }
+          "ar":"نقدم لك جميع خدمات المواقع الإلكترونية وتطبيقات الموبايل وبرامج إدارة المؤسسات وكل الحلول التقنية الذكية التي تحتاجها في إنشاء وتطوير أعمالك لتنقل أعمالك للمستقبل وتواكب تقنيات الذكاء الاصطناعي."
+        },
+        Sliderheader:{
+          "en":"Thaka international provides you",
+          "ar":"ذكاء الدولية توفر لك"
+        },
       };
     },
     computed :{
@@ -147,28 +167,34 @@
       },
     },
     created() {
-      this.play();
       this.Animate();
+      this.play();
+     
     },
 
   };
   </script>
-  
   <style lang="scss" scoped>
   .carousel {
-    max-height: 75vh;
+    text-align:justify;
     position: relative;
     overflow: hidden;
+    height: 90vh !important;
+    padding-top:1rem;
+
   }
   
-  .carousel .carousel-inner {
-    max-height: 75vh;
-  }
+ .carousel .carousel-inner {
+  width: 100%;
+  height:90%;
+
+  overflow: hidden;  
+  box-sizing: border-box;
+}
   
   .carousel .carousel-inner img {
     width: 100%;
-    height: 75vh;
-    box-sizing: border-box;
+   max-height:100%;
   }
   .carousel-item {
     position: relative;
@@ -188,6 +214,8 @@ position: absolute;
   background-color: rgba(0,0,0,0.5);
   z-index: 2;
 
+
+
 }
 #overlay .cc {
 
@@ -205,23 +233,25 @@ color:#ffffff !important;
 
 }
 
-#overlay p {
+#overlay h4 {
 //styleName: 16 Reg;
 font-family: Cairo;
 font-size: 16px;
-font-weight: 400;
 line-height: 30px;
 letter-spacing: 0em;
-text-align: justified;
-
+text-align: justify;
+margin-bottom: 1rem;
+padding: 20px 5px;
 }
-#overlay  h6 {
+#overlay  h2 {
   //styleName: 20 Reg;
 font-family: Cairo;
 font-size: 20px;
-font-weight: 400;
-line-height: 37px;
+/*line-height: 37px;*/
 letter-spacing: 0em;
+padding: 20px 5px;
+font-weight: 300;
+color: #fff;
 // text-align: right;
 
 }
@@ -239,12 +269,10 @@ letter-spacing: 0em;
   50% { color: #09B9E1; }
 }
 #overlay  .button {
-    top :60px;
     // position: fixed;
     border-left: 5px solid #09B9E1;
     height:50px;
     font-size: 40px;
-    font-weight: 400px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background:transparent;
     animation:borderMove 3.5s alternate-reverse step-end ,
@@ -261,7 +289,7 @@ letter-spacing: 0em;
 #overlay .btn2 {
   overflow: hidden;
 
-    top:134px;
+    top:100px;
     width:130px;
     letter-spacing: 3px;
     font-weight: bold;
@@ -282,10 +310,18 @@ letter-spacing: 0em;
     0%{
         padding:  5px 0px 5px 0px;
     }
-    4%{
-        padding: 5px 0px 5px 10px;
+    2%{
+        padding: 5px 0px 5px 5px;
 
     } 
+    4%{
+      padding: 5px 0px 5px 10px;
+
+  }
+ 6%{
+    padding:  5px 0px 5px 15px;
+
+} 
     8%{
         padding:  5px 0px 5px 20px;
 

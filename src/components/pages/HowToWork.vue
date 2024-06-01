@@ -40,8 +40,7 @@
         <p
         :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
 
-        >نحن لا ننظر فقط إلى البيانات. نحن نبحث عن المعلومات.
-          المعلومات التي تقود التحليل والرؤى ، والتي تمكننا من اكتساب فهم أفضل للأفراد والصناعة والأسواق ، وبالتالي تساعدنا على رسم طريق أفضل لتحقيق نتائج أفضل.</p>
+       >{{parseName(HowWorkParagraph)}}</p>
         </div>
 
 
@@ -52,12 +51,20 @@
 <script>
 export default {
   name: "how-to-work",
+  data(){
+    return{
+      HowWorkParagraph: {
+        "ar":"نساعد عملائنا على تبسيط أعمالهم من خلال مجموعة الحلول والخدمات والتطبيقات التي تساعد على تسهيل سير وتكامل الأعمال بالإضافة إلى الدعم التقني والمتابعة المستمرة.",
+        "en":"We help our customers simplify their business through a set of solutions, services and applications that help facilitate the flow and integration of business, in addition to technical support and continuous follow-up."
+      }
+    }
+  },
   computed :{
     lang() {
       return localStorage.getItem("lang") || "en";
-
     }
   },
+
 };
 </script>
 <style scoped>

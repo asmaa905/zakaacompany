@@ -25,18 +25,27 @@
       <div class="flex-center">
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="JoinUs">{{ $t('jobs') }}</a>
+            <li class="nav-item ">
+              <router-link class="nav-link" to="/blog">{{ $t('blog') }}</router-link>
+            </li>
+            <li class="nav-item ">
+              <router-link class="nav-link" to="/jobs">{{ $t('jobs') }}</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contactUs">{{ $t('contactUs') }}</a>
+              <router-link class="nav-link" to="/contactUs">{{ $t('contactUs') }}</router-link>
             </li>
             <li class="nav-item"></li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/JoinUs">{{ $t('AboutUs') }}</router-link>
+              <router-link class="nav-link" to="/OurWorks">{{ $t('OurWorks') }}</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="#">{{ $t('Home') }}</router-link>
+              <router-link class="nav-link" to="/ourServies">{{ $t('ourServies') }}</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/about">{{ $t('AboutUs') }}</router-link>
+            </li>
+            <li class="nav-item active">
+              <router-link class="nav-link" to="/">{{ $t('Home') }}</router-link>
             </li>
           </ul>
         </div>
@@ -77,7 +86,6 @@ nav {
 .nav-item {
   position: relative;
   font-size: 18px;
-  font-weight: bold;
   font-weight: 700px;
   cursor: pointer;
 }
@@ -100,8 +108,15 @@ nav {
     transform-origin: bottom left; 
 
 }
+.nav-item:active::after {
+  transform: scaleX(1);
+    transform-origin: bottom left; 
 
+}
 .nav-item:hover {
+  color: #00ABAD;
+}
+.nav-item .active {
   color: #00ABAD;
 }
 
