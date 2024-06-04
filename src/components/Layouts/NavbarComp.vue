@@ -3,7 +3,7 @@
     background-color: #fff;
     width: 100%;
     position: fixed;
-    z-index: 2;
+    z-index: 99999;
     top: 0;
     box-shadow: 0 2px 2px rgba(112, 174, 170, .2);
     height: auto;
@@ -16,8 +16,8 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto" :class="`text-align-${lang == 'en' ? 'right' : 'left'}`">
-            <li class="d-flex-column translation nav-item" style="border: 1px solid #8A8A8A; z-index: 9999 !important;">
+          <ul class="navbar-nav " :class="`text-align-${lang == 'en' ? 'right' : 'left'}`">
+            <li class="d-flex-column translation nav-item" style="border: 1px solid #8A8A8A; z-index: 99999 !important;">
               <div class="d-flex select-lang">
                 <img src="@/assets/fluent-mdl2_world.svg" alt="trans" style="width: 16px; height: 16px; top: -0px" />
                 <div class="d-flex" @click="showLang = !showLang">
@@ -100,7 +100,7 @@ export default {
 <style scoped>
 nav {
   font-family: cairo;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 .nav-item {
@@ -160,7 +160,7 @@ nav {
 .menu-lang {
   position: absolute;
   top: 57px;
-  z-index: 9999;
+  z-index: 99999;
   box-shadow: burlywood;
   width: 80px;
   background-color: #ffffff;
