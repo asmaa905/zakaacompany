@@ -7,12 +7,12 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       component: () => import("../views/HomeView.vue"),
     },
     {
       path: "/about",
-      name: "about",
+      name: "AboutUs",
       component: () => import("../components/pages/AboutUs.vue"),
     },
     {

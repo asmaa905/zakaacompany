@@ -14,9 +14,11 @@
           <div class="  cardd"
             style="position: relative; text-align: center;"
           >
-            <div class="card-cyper">
+            <div class="card-cyper"
+            :style="`${lang == 'en'?'right:50px;':'left:30px;' }`">
               <h2
               :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
+
 
               >{{ parseName(programmingSol) }}
             </h2>
@@ -31,7 +33,8 @@
               </svg>
             </div>
             <div 
-            class=" card-cyper-more"
+            class=" card-cyper-more "
+            :class="`${lang == 'en'?'card-cyper-en':'card-cyper-ar'}`"
             >
               <p
               >
@@ -43,7 +46,8 @@
           <div class="cardd"
           style="position: relative; text-align: center;"
 >
-            <div class="card-cyper">
+            <div class="card-cyper"
+            :style="`${lang == 'en'?'right:50px;':'left:30px;' }`">
             <h2
              :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
             > 
@@ -61,6 +65,7 @@
             </div>
             <div 
             class=" card-cyper-more"
+            :class="`${lang == 'en'?'card-cyper-en':'card-cyper-ar'}`"
             >
               <p
               
@@ -71,7 +76,8 @@
           <div class="cardd"            
           style="position: relative; text-align: center;"
           >
-          <div class="card-cyper">
+          <div class="card-cyper"
+          :style="`${lang == 'en'?'right:50px;':'left:30px;' }`">
           <h2
           :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
 
@@ -99,6 +105,7 @@
           </div>
           <div 
             class=" card-cyper-more"
+            :class="`${lang == 'en'?'card-cyper-en':'card-cyper-ar'}`"
             >
               <p
               
@@ -109,7 +116,8 @@
           <div class="cardd"            
           style="position: relative; text-align: center;"
           >
-          <div class="card-cyper">
+          <div class="card-cyper"
+          :style="`${lang == 'en'?'right:50px;':'left:30px;' }`">
 
               <h2>{{ parseName(SoftwareSol) }}</h2>
               <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
@@ -134,6 +142,7 @@
           </div>
           <div 
             class=" card-cyper-more"
+            :class="`${lang == 'en'?'card-cyper-en':'card-cyper-ar'}`"
             >
               <p
               
@@ -202,6 +211,10 @@ export default {
 
 .products {
   background: var(--light-primary2, #CCEEEF);
+}
+.container {
+  margin-right: 0px !important;
+ margin-left: 0px !important;
 }
 .content{
   padding: 40px 120px;
@@ -302,7 +315,6 @@ visibility: visible;
   max-height: 100%; 
   width:100%;  
   display: flex;
-  left:30px; 
 
 }
  .cardd:hover > .card-cyper{
@@ -313,14 +325,20 @@ visibility: visible;
 .cardd:hover > .card-cyper-more{
   display: block;
   transform: translate(-40px, -40px);
-
-
-  /* top:50%;*/
-  left:30px; 
-  top:50px; 
-  right: 0px;
-
+  
 } 
+
+  .cardd:hover > .card-cyper-en{
+    right:0px;
+    left: 0px; 
+    top:20px; 
+  } 
+  
+  .cardd:hover > .card-cyper-ar{
+    left:30px;
+    right: 0px;
+    top:50px; 
+  } 
 .cardd {
   transition: all 6s linear;
 }

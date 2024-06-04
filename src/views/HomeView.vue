@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" style="position: relative">
     <main-layout >
       <template slot="content" >
         <header-slider></header-slider>

@@ -44,7 +44,7 @@ export default {
   },
   watch: {
     "$route.fullPath": function (val) {
-      console.log("val",val)
+      console.log(val)
      this.updateTitle();
     },
     lang: {
