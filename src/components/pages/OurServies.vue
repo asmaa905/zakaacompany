@@ -1,4 +1,5 @@
 <template>
+  <div class="container">
   <div class="content d-flex">
     <div class="leftSide d-flex align-items-end flex-column">
       <div v-for="service in services" :key="service.id">
@@ -21,7 +22,7 @@
       <div v-if="currentServieee.id === 3" class="chield m-auto"  :style="`top:160px;bottom:0x`"></div>
 
     </div>
-    <div class="d-flex justify-content-between" style="">
+    <div class="rightSide d-flex justify-content-between" style="">
       <img 
         v-if="currentServieee.id !== 3" 
         class="img" 
@@ -49,6 +50,8 @@
       </div>
     </div>
   </div>
+</div>
+
 </template>
 <script>
 export default{
@@ -172,35 +175,40 @@ export default{
 </script>
 <style scoped>
 .content{
-  padding:40px 120px;
+  padding:50px 0;
   
 }
 .leftSide{
-  width:50%
+  width:100%
 }
-h2{
+.rightSide {
+  width:100%
+}
+.rightSide h2{
+  color: #28649C;
+}
+.leftSide h2{
   color: var(--Primary2, #00ABAD);
+}
+.rightSide h2,.leftSide h2{
 /* text-align: right; */
 
 /* 24 Bold */
 font-family: Cairo;
-font-size: 24px;
+font-size: 18px;
 font-style: normal;
-font-weight: 700px;
-font-weight: bold;
+font-weight: 700;
 line-height: normal;
 }
 .leftSide p{
   color: var(--Black, #12151C);
 text-align: justify;
-width:474px;
 /* direction: rtl; */
 font-family: Cairo;
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 1.7;
-margin: left;
 
 
 }
@@ -264,7 +272,6 @@ align-items: center;
 gap: 8px;
 background: var(--Primary2, #00ABAD);
 width: fit-content;
-margin-top: 28px;
 }
 .img{
   /* margin-right: 132px; */
@@ -275,10 +282,10 @@ margin-top: 16px;
 
 }
 .rightSide p{
-  width: 389px;
-   /* //  direction: rtl; */
-    /* text-align: right; */
-
+  text-align: right;
+  line-height: 30px;
+  letter-spacing: 1px;
+  margin: 20px 0
 }
 
 </style>

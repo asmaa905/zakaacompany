@@ -18,32 +18,34 @@
           :style="`${lang=='en'?' direction: ltr;justify-content: left; text-align: left;':  ' direction: rtl;justify-content: right; text-align: right;'}`"
 
           >
-          <div style="max-height: 100%; width:44%; padding-top:30px"
-          :style="`${lang == 'en'?'padding-left: 30px; ':'padding-right: 30px;'}`"
-          >
-            <h2
-            :style="`${lang=='en'?' text-align: left;' : 'text-align: right;'}`"
-            v-text="parseName(Sliderheader)+ '.....'"
-            />
-              <div v-if="lang == 'ar'" class="input-wrapper">
-              <br/>
-                  <h1  
-                      class="btn2 button"
-                      style="font-size:40px;font-weight:bold; "
-                      v-for="(itemm, i) in animatedWords"
-                      :key="i"
-                      :style="`display: ${currentWord == i ? 'block' : 'none'}`"                >
-                  <div>
-                      <span>{{ parseName(itemm.text) }}</span>
+          <div class="container">
+            <div style="max-height: 100%; width:44%; padding-top:30px"
+              >
+              <!-- :style="`${lang == 'en'?'padding-left: 30px; ':'padding-right: 30px;'}`" -->
+                <h2
+                :style="`${lang=='en'?' text-align: left;' : 'text-align: right;'}`"
+                v-text="parseName(Sliderheader)+ '.....'"
+                />
+                  <div v-if="lang == 'ar'" class="input-wrapper">
+                  <br/>
+                      <h1  
+                          class="btn2 button"
+                          style="font-size:40px;font-weight:bold; "
+                          v-for="(itemm, i) in animatedWords"
+                          :key="i"
+                          :style="`display: ${currentWord == i ? 'block' : 'none'}`"                >
+                      <div>
+                          <span>{{ parseName(itemm.text) }}</span>
+                      </div>
+                    </h1>
+                    <br/>
+  
                   </div>
-                </h1>
-                <br/>
-
+                  <div v-else style="height: 80px;"></div>
+                  <h4 v-text="parseName(paragragh)" />
+                  <b-button class="cc">{{ $t('contactUs') }}</b-button>
               </div>
-              <div v-else style="height: 80px;"></div>
-              <h4 v-text="parseName(paragragh)" />
-              <b-button class="cc">{{ $t('contactUs') }}</b-button>
-          </div>
+            </div>
         </div>
         <img 
         :src="item.src"

@@ -1,8 +1,8 @@
 <template>
   <div class="products">
      <div class="container">
-  <div class="content ">
-        <h2     
+  <div class="content "  style=" padding: 50px 0 ;width:100%">
+        <h2 class="title"
           :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
         >{{ $t('ProvideTechinicalSolutions') }}
         </h2>
@@ -10,7 +10,7 @@
           :style="`text-align:${ lang=='en'?'left'  : 'right'};`"
         >{{ $t('WeCanHelpYouToDesignOrDeveloAnyDigitalSolution') }}
         </p>
-        <div class="d-flex gap-3  align-items-center  justify-content-center;">
+        <div class="d-flex gap-3  align-items-center  justify-content-center;" style="width: 100%">
           <div class="  cardd"
             style="position: relative; text-align: center;"
           >
@@ -212,19 +212,15 @@ export default {
 .products {
   background: var(--light-primary2, #CCEEEF);
 }
-.container {
+/*.container {
   margin-right: 0px !important;
  margin-left: 0px !important;
-}
-.content{
-  padding: 40px 120px;
+} */
 
-}
-h2{
-  color: var(--Blue2, #28649C);
+ .card-cyper h2{
+  width:40% ;
 
-
-/* 18 Bold */
+  color: #333;
 font-family: Cairo;
 font-size: 18px;
 font-style: normal;
@@ -242,33 +238,25 @@ p{
 /* cards */
 .cardd{
   display: flex;
-width: 25%;
-height: 258px;
-padding: 21px 16px;
-justify-content: center;
-align-items: center;
-flex-shrink: 0;
-border-radius: 8px;
-background: var(--White, #FFF);
+  width: 23%;
+  height: 258px;
+  padding: 3% 2%;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--White, #FFF);
+  box-shadow: 0px 4px 4px 0px rgba(144, 144, 144, 0.25);
+  margin-top: 24px;
+  margin-right: 1%;
+}
+.title {
+  color: #28649c;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0 20px;
+}
 
-
-box-shadow: 0px 4px 4px 0px rgba(144, 144, 144, 0.25);
-margin-top: 24px;
-margin-right:16px ;
-}
-h2{
-  color: #333;
-/* text-align: right; */
-/*font-weight: bold;*/
-/* 18 Bold */
-font-family: Cairo;
-font-size: 18px;
-font-style: normal;
-line-height: normal;
-}
-.cardd h2{
-   width:40% ;
-}
 .cardd svg{
   margin-left: 16px;
 }
@@ -329,15 +317,15 @@ visibility: visible;
 } 
 
   .cardd:hover > .card-cyper-en{
-    right:0px;
-    left: 0px; 
-    top:20px; 
+    right: 3;
+    left: 20px;
+    top: 20px;
   } 
   
   .cardd:hover > .card-cyper-ar{
     left:30px;
     right: 0px;
-    top:50px; 
+    top:20px; 
   } 
 .cardd {
   transition: all 6s linear;
